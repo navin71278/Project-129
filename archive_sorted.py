@@ -10,11 +10,10 @@ with open("final.csv", "r") as f:
 headers = data[0]
 stars_data = data[1:]
 
-#Converting all planet names to lower case
 for data_point in stars_data:
     data_point[2] = data_point[2].lower()
 
-#Sorting planet names in alphabetical order
+
 stars_data.sort(key=lambda stars_data: stars_data[2])
 
 
@@ -23,7 +22,6 @@ with open("final_sorted.csv", "a+") as f:
     csvwriter.writerow(headers)
     csvwriter.writerows(stars_data)
 
-#remove blank lines
 with open('final_sorted.csv') as input, open('final_sorted1.csv', 'w', newline='') as output:
      writer = csv.writer(output)
      for row in csv.reader(input):
